@@ -1,8 +1,36 @@
+@font-face {
+  font-family: "FuturaPT";
+  src: url("./assets/fonts/FuturaPT-Heavy.woff");
+}
+
+@font-face {
+  font-family: "FuturaPT-lite";
+  src: url("./assets/fonts/FuturaPT-Light.woff");
+}
+@font-face {
+  font-family: "FuturaPT-medium";
+  src: url("./assets/fonts/FuturaPT-Medium.woff");
+}
+@font-face {
+  font-family: "MadeEvolveBold";
+  src: url("./assets/fonts/MadeEvolveBold.otf");
+}
+
+:root {
+  --main-violet: #ff33ff;
+  --button-hover-color: #ff33ff;
+  --main-neon-green: #6f55ec;
+  --main-font-bold: "FuturaPT";
+  --main-font-light: "FuturaPT-lite";
+  --main-font-medium: "FuturaPT-medium";
+  --font-made-evolve: "MadeEvolveBold";
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "FuturaPT", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +38,92 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+button:hover {
+  cursor: pointer;
+  outline: none;
+}
+button:focus {
+  outline: none;
+  border: none;
+}
+
+section {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  display: block;
+  padding: 0;
+  margin: 0;
+  background: none;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+input:hover,
+input:focus {
+  outline: none;
+}
+
+/* nav-link active */
+.menu_active::after {
+  transform: scaleX(1) !important;
+}
+
+/* slick - slider - current */
+
+@media (min-width: 80px) {
+  .slick-current div {
+    position: relative;
+    transform: scale(1);
+    margin-right: 0 50px 0 20px;
+    transition: all 0.5s ease-in;
+  }
+}
+
+@media (min-width: 480px) {
+  .slick-slide div {
+    margin-right: 30px;
+  }
 }
