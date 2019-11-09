@@ -13,9 +13,12 @@ const innitialState = {
 
 const StyledForm = styled.form`
   width: 100%;
+  text-align: center;
+
   & input {
-    width: 295px;
     height: 40px;
+    margin: 0 auto;
+    width: 295px;
     margin-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 0;
