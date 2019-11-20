@@ -149,5 +149,9 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "git@github.com:vvpwork/edesign.git",
+  "author": "vvpwork <vovvva33@gmail.com>",
+  "license": "MIT"
 }
