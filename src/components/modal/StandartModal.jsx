@@ -1,22 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-// import transition, { css } from "styled-transition-group";
-
 import ModalWrapper from "./index";
 import ActionButton from "../ActionButton";
+import { sendMail } from "../../modules/axiosOperation";
 
-// style
-
-// const AnimeModal = keyframes`
-//   from {
-//     transform: scale(0);
-//   }
-
-//   to {
-//     transform: scale(1);
-//   }
-// `;
 const style = {
   entering: {
     opasity: 0
@@ -85,6 +73,13 @@ export default class StandartModal extends Component {
   handleSubmit = ev => {
     const { toggleSuccessModal, toggle } = this.props;
     ev.preventDefault();
+    sendMail(JSON.stringify(this.state))
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
     toggle();
     toggleSuccessModal();
     setTimeout(() => toggleSuccessModal(), 2000);

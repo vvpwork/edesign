@@ -11,7 +11,7 @@ const StyledModal = styled.div`
   width: 100vw;
   min-height: 100vh;
   background: #242424;
-  z-index:999;
+  z-index: 999;
   & .closeModal {
     position: absolute;
     z-index: 1;
@@ -42,7 +42,6 @@ const StyledModal = styled.div`
 export default class Modal extends Component {
   componentDidMount() {
     const { isOpen } = this.props;
-    console.log(isOpen);
     isOpen
       ? (document.getElementById("root").style.overflowY = "hidden")
       : (document.getElementById("root").style.overflowY = "true");
