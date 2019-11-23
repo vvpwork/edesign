@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { bounceInRight } from "react-animations";
 
@@ -91,25 +92,29 @@ class DesignSection extends Component {
             <StyledSVG>
               <Graphic />
             </StyledSVG>
-            <ActionButton
-              click={ev => (window.location = "/graphic")}
-              value="Подробнее..."
-              style={{
-                marginBottom: "60px"
-              }}
-            />
+            <Link to="/graphic" style={{ textDecoration: "none" }}>
+              <ActionButton
+                // click={ev => (window.location = "/graphic")}
+                value="Подробнее..."
+                style={{
+                  marginBottom: "60px"
+                }}
+              />
+            </Link>
           </StyledServicesWrapper>
           <StyledServicesWrapper>
             <StyledSVG>
               <Web />
             </StyledSVG>
-            <ActionButton
-              click={ev => (window.location = "/webdesign")}
-              value="Подробнее..."
-              style={{
-                marginBottom: "60px"
-              }}
-            />
+            <Link to="/webdesign" style={{ textDecoration: "none" }}>
+              <ActionButton
+                // click={ev => (window.location = "/webdesign")}
+                value="Подробнее..."
+                style={{
+                  marginBottom: "60px"
+                }}
+              />
+            </Link>
           </StyledServicesWrapper>
         </StyledServicesFlexWrapper>
       </StyledWrapper>

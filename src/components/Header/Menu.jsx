@@ -134,7 +134,7 @@ const StyledCloseButton = styled.button`
     transform: rotate(-45deg);
   }
 
-  @media (min-width: 421px) {
+  @media (min-width: 480px) {
     display: none;
   }
 `;

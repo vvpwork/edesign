@@ -9,7 +9,6 @@ const StyledLogo = styled(Logo)`
   height: 129px;
   @media (min-width: 480px) {
     height: auto;
-    fill: red;
   }
 `;
 

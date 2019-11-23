@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import SliderList from "../../config/project_carusel";
+import { arr } from "../../config/project_carusel";
 import SliderProject from "../carusel/Slider";
 
 import withSection from "../withSection";
@@ -48,9 +48,10 @@ class ProjectSection extends Component {
       slidesToScroll: 1,
       centerPadding: "0px",
       speed: 700,
-      initialSlide: 3,
+      initialSlide: 1,
       variableWidth: true,
       adaptiveHeight: true,
+      useTransform: true,
       responsive: [
         {
           breakpoint: 480,
@@ -64,9 +65,9 @@ class ProjectSection extends Component {
       ]
     };
     return (
-      <StyledWrapper>
+      <StyledWrapper className="homeSlider">
         <h2>Projects</h2>
-        <SliderProject settings={settings} sliderList={SliderList} />
+        <SliderProject settings={settings} sliderList={arr} />
       </StyledWrapper>
     );
   }

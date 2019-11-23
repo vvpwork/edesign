@@ -124,7 +124,6 @@ class Contact extends Component {
   };
 
   toggelModal = () => {
-    console.log("toogle");
     this.setState(prevState => ({ isOpenModal: !prevState.isOpenModal }));
   };
 

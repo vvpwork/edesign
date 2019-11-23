@@ -1,6 +1,20 @@
+/* eslint-disable*/
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { merge, rotateInUpLeft, fadeInUp, flipInY } from "react-animations";
+
+const newAni = merge(fadeInUp, flipInY);
+const AnimateItem = keyframes(newAni);
+const customAnimet = keyframes`
+  from{
+    opacity: 0.2;
+  }
+
+  to{
+    opacity: 1;
+  }
+`;
 
 const StyledLink = styled.div`
   position: relative;
@@ -8,6 +22,7 @@ const StyledLink = styled.div`
   transform: scale(0.8);
   height: auto;
   /* margin: 0 ; */
+  animation: ${customAnimet} 1s ease-in-out;
   & p {
     position: absolute;
     z-index: 2;
@@ -31,9 +46,9 @@ const StyledLink = styled.div`
   }
 `;
 
-const Item = ({ arr }, ...props) => {
+const Item = ({ arr, style = {} }, ...props) => {
   return (
-    <StyledLink {...props}>
+    <StyledLink {...props} style={style} className="slider__item">
       <Link to={arr.link}>
         <img src={arr.img} alt={arr.name} />
         <p>{arr.name}</p>

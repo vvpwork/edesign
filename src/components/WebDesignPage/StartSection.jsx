@@ -34,7 +34,7 @@ const StyledWrapper = styled.div`
   }
   @media (min-width: 480px) {
     padding: 160px 0px 0px 0px;
-    & > h2{
+    & > h2 {
       margin-left: 10%;
       font-size: 50px;
     }
@@ -73,10 +73,8 @@ const StyledLink = styled(Link)`
     background-size: contain;
     animation: ${arrowAnimate} 1.2s linear infinite;
   }
-  
 `;
 const OpenTextStyled = styled(OpenText)`
-
   &::after {
     content: "от 15 000 грн";
     position: absolute;
@@ -88,7 +86,6 @@ const OpenTextStyled = styled(OpenText)`
     font: 400 18px var(--main-font-bold);
     color: rgba(255, 255, 255, 0.6);
   }
-  
 `;
 const StyledContainer = styled.div`
   box-sizing: border-box;
@@ -210,7 +207,7 @@ class StartSection extends Component {
         </Transition>
         {isOpenSuccessModal && <SuccessModal />}
       </StyledWrapper>
-    )
+    );
   }
 }
 

@@ -64,7 +64,6 @@ const ButtonContainer = styled.div`
     }
   }
 `;
-
 class SliderTest extends Component {
   next = () => {
     this.slider.slickNext();
@@ -75,12 +74,12 @@ class SliderTest extends Component {
   };
 
   render() {
-    const { settings, sliderList } = this.props;
+    const { settings, sliderList, style } = this.props;
     return (
       <StyledContainer>
         <Slider ref={c => (this.slider = c)} {...settings}>
           {sliderList.map(el => (
-            <Item arr={el} key={el.name} />
+            <Item arr={el} key={el.name} style={style} />
           ))}
         </Slider>
         <ButtonContainer>

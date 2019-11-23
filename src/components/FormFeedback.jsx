@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import ActionButton from "./ActionButton";
+import { sendMail } from "../modules/axiosOperation";
 
 const innitialState = {
   name: "",
@@ -13,9 +14,12 @@ const innitialState = {
 
 const StyledForm = styled.form`
   width: 100%;
+  text-align: center;
+
   & input {
-    width: 295px;
     height: 40px;
+    margin: 0 auto;
+    width: 295px;
     margin-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 0;
@@ -43,12 +47,16 @@ class Form extends Component {
 
   handleSubmit = ev => {
     ev.preventDefault();
-    console.log(this.state);
+    sendMail(JSON.stringify(this.state))
+      .then(({ data }) => console.log(data))
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   handleChange = ({ target: { value, name } }) => {
     this.setState({
-      [name]: [value]
+      [name]: value
     });
   };
   render() {
